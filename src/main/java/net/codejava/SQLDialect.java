@@ -5,10 +5,7 @@
  */
 package net.codejava;
 
-/**
- *
- * @author jose.jimenez07
- */
+
 import java.sql.Types;
 import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.function.StandardSQLFunction;

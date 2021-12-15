@@ -5,10 +5,8 @@
  */
 package net.codejava;
 
-/**
- *
- * @author jose.jimenez07
- */
+
+
 
 public class Usuario {
 

@@ -5,10 +5,7 @@
  */
 package net.codejava.entity;
 
-/**
- *
- * @author jose.jimenez07
- */
+
 public class Formulario {
 
     private String nombre;
