@@ -19,8 +19,8 @@ public class IMCService {
 		return repo.findAll();
 	}
 	
-	public void save(IMC medida) {
-		repo.save(medida);
+	public void save(IMC listIMC) {
+		repo.save(listIMC);
 	}
 	
 	public IMC get(long id) {
