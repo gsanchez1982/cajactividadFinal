@@ -35,14 +35,12 @@ public class AppController {
             model.addAttribute("formulario", new Formulario());
             return "login";
         }
-        //model.addAttribute("listIMC", listIMC);
     }
 
     @RequestMapping("/login")
     public String login(HttpSession session) {
         session.setAttribute("mySessionAttribute", "Bienvenido");
 
-        // model.addAttribute("listProducts", listProducts);
         return "redirect:/";
     }
 
@@ -61,17 +59,10 @@ public class AppController {
         return "redirect:/";
     }
 
-    @RequestMapping("/edit/{id}")
-    public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
-        ModelAndView mav = new ModelAndView("edit_product");
-        IMC product = service.get(id);
-        mav.addObject("product", product);
 
-        return mav;
-    }
 
     @RequestMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable(name = "id") int id) {
+    public String deleteIMC (@PathVariable(name = "id") int id) {
         service.delete(id);
         return "redirect:/";
     }
