@@ -68,7 +68,7 @@ public class IMC {
 		return iMC;
 	}
 
-	public void setIMC(float iMC, float altura, float peso) {
+	public void setIMC(float altura, float peso) {
                 this.iMC = peso / (altura * altura);
 	}
         
