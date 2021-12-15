@@ -47,11 +47,11 @@ public class AppController {
     }
 
     @RequestMapping("/new")
-    public String showNewProductPage(Model model) {
-        IMC product = new IMC();
-        model.addAttribute("product", product);
+    public String showNewIMCPage(Model model) {
+        IMC IMC = new IMC();
+        model.addAttribute("IMC", IMC);
 
-        return "new_product";
+        return "new_IMC";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

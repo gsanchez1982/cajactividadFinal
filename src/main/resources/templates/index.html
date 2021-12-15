@@ -8,15 +8,17 @@
     <body>
         <div align="center">
             <p th:text="${session.mySessionAttribute}" th:unless="${session == null}">[...]</p>
-            <h1>Calcula tu IMC</h1>
-            <a href="new">Indice de Masa Corporal</a>
+            <h1>Calcula tu Indice de Masa Corporal (IMC)</h1>
+            <a href="new">Haz click aquí para calcular un nuevo IMC</a>
             <br/><br/>
+            <align = "center>Medidas anteriores:</align>
             <table border="1" cellpadding="10">
                 <thead>
                     <tr>
                         <th>Fecha</th>
                         <th>Peso</th>
                         <th>Altura</th>
+                        <th>IMC</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -25,6 +27,7 @@
                         <td th:text="${IMC.fecha}">Fecha</td>
                         <td th:text="${IMC.peso}">Peso</td>
                         <td th:text="${IMC.altura}">Altura</td>
+                        <td th:text="${IMC.iMC}">IMC</td>
                         <td>
                             <a th:href="@{'/edit/' + ${medida.id}}">Edit</a>
                             &nbsp;&nbsp;&nbsp;
