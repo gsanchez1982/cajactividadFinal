@@ -4,10 +4,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import net.codejava.services.ProductService;
+import net.codejava.services.IMCService;
 import net.codejava.Usuario;
 import net.codejava.entity.Formulario;
-import net.codejava.entity.Product;
+import net.codejava.entity.IMC;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,20 +22,20 @@ import org.springframework.web.servlet.ModelAndView;
 public class AppController {
 
     @Autowired
-    private ProductService service;
+    private IMCService service;
 
     @RequestMapping("/")
     public String viewHomePage(HttpSession session, Model model) {
 
         if (session.getAttribute("mySessionAttribute") != null) {
-            List<Product> listProducts = service.listAll();
-            model.addAttribute("listProducts", listProducts);
+            List<IMC> listIMC = service.listAll();
+            model.addAttribute("listIMC", listIMC);
             return "index";
         } else {
             model.addAttribute("formulario", new Formulario());
             return "login";
         }
-        //model.addAttribute("listProducts", listProducts);
+        //model.addAttribute("listIMC", listIMC);
     }
 
     @RequestMapping("/login")
@@ -48,15 +48,15 @@ public class AppController {
 
     @RequestMapping("/new")
     public String showNewProductPage(Model model) {
-        Product product = new Product();
+        IMC product = new IMC();
         model.addAttribute("product", product);
 
         return "new_product";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("product") Product product) {
-        service.save(product);
+    public String saveIMC(@ModelAttribute("IMC") IMC IMC) {
+        service.save(IMC);
 
         return "redirect:/";
     }
@@ -64,7 +64,7 @@ public class AppController {
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
         ModelAndView mav = new ModelAndView("edit_product");
-        Product product = service.get(id);
+        IMC product = service.get(id);
         mav.addObject("product", product);
 
         return mav;

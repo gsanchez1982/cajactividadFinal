@@ -1,29 +1,29 @@
 package net.codejava.services;
 
-import net.codejava.repositories.ProductRepository;
-import net.codejava.entity.Product;
+import net.codejava.entity.IMC;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import net.codejava.repositories.IMCRepository;
 
 @Service
 @Transactional
-public class ProductService {
+public class IMCService {
 
 	@Autowired
-	private ProductRepository repo;
+	private IMCRepository repo;
 	
-	public List<Product> listAll() {
+	public List<IMC> listAll() {
 		return repo.findAll();
 	}
 	
-	public void save(Product product) {
-		repo.save(product);
+	public void save(IMC medida) {
+		repo.save(medida);
 	}
 	
-	public Product get(long id) {
+	public IMC get(long id) {
 		return repo.findById(id).get();
 	}
 	

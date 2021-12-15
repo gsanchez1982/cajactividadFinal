@@ -10,10 +10,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author jose.jimenez07
- */
+
 @Service
 public class UserService {
 
