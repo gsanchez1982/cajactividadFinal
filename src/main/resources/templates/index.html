@@ -23,15 +23,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="medida : ${listMedidas}">
+                    <tr th:each="listIMC : ${listIMC}">
                         <td th:text="${IMC.fecha}">Fecha</td>
                         <td th:text="${IMC.peso}">Peso</td>
                         <td th:text="${IMC.altura}">Altura</td>
                         <td th:text="${IMC.iMC}">IMC</td>
                         <td>
-                            <a th:href="@{'/edit/' + ${medida.id}}">Edit</a>
+                            <a th:href="@{'/edit/' + ${listIMC.id}}">Edit</a>
                             &nbsp;&nbsp;&nbsp;
-                            <a th:href="@{'/delete/' + ${medida.id}}">Delete</a>
+                            <a th:href="@{'/delete/' + ${listIMC.id}}">Delete</a>
                         </td>
                     </tr>
                 </tbody>
