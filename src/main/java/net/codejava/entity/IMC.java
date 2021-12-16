@@ -9,78 +9,79 @@ import java.time.format.DateTimeFormatter;
 
 @Entity
 public class IMC {
-	private Long id;
-	private String name;
-	private float peso;
-	private float altura;
-        private float iMC;
-	private String fecha;
 
-	public IMC() {
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private float peso;
+    private float altura;
+    private float iMC;
+    private String fecha;
 
-	protected IMC(Long id, String name, float peso, float altura, float iMC, String fecha) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.peso = peso;
-		this.altura = altura;
-		this.iMC = iMC;
-                this.fecha = fecha;
-	}
+    public IMC() {
+    }
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long getId() {
-		return id;
-	}
+    protected IMC(Long id, String name, float peso, float altura, float iMC, String fecha) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.peso = peso;
+        this.altura = altura;
+        this.iMC = iMC;
+        this.fecha = fecha;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		
-                this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public float getPeso() {
-		return peso;
-	}
+    public void setName(String name) {
 
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
+        this.name = name;
+    }
 
-	public float getAltura() {
-		return altura;
-	}
+    public float getPeso() {
+        return peso;
+    }
 
-	public void setAltura(float altura) {
-		this.altura = altura;
-	}
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
 
-	public float getIMC() {
-		return iMC;
-	}
+    public float getAltura() {
+        return altura;
+    }
 
-	public void setIMC(float altura, float peso) {
-                this.iMC = peso / (altura * altura);
-	}
-        
-        public String getFecha() {
-		return fecha;
-	}
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
 
-	public void setFecha(String fecha) {
-                LocalDate miFecha = LocalDate.now();
-                DateTimeFormatter miFechaF = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                String FechaFormat = miFecha.format(miFechaF);
-		this.fecha = FechaFormat;
-	}
+    public String getFecha() {
+        return fecha;
+    }
+
+    public float getiMC() {
+        return iMC;
+    }
+
+    public void setiMC(float iMC) {
+        this.iMC = iMC;
+    }
+
+    public void setFecha(String fecha) {
+        LocalDate miFecha = LocalDate.now();
+        DateTimeFormatter miFechaF = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String FechaFormat = miFecha.format(miFechaF);
+        this.fecha = FechaFormat;
+    }
 
 }
