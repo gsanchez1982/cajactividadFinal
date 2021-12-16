@@ -48,13 +48,11 @@ public class AppController {
     public String showNewIMCPage(Model model) {
         IMC IMC = new IMC();
         model.addAttribute("IMC", IMC);
-
         return "new_IMC";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveIMC(@ModelAttribute("IMC") IMC imc) {
-        imc.iMC = imc.peso/(imc.altura * imc.altura);
         service.save(imc);
 
         return "redirect:/";
