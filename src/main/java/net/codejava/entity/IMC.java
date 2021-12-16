@@ -68,8 +68,8 @@ public class IMC {
 		return iMC;
 	}
 
-	public void setIMC(float altura, float peso) {
-                this.iMC = peso / (altura * altura);
+	public void setIMC(float iMC) {
+                this.iMC = iMC;
 	}
         
         public String getFecha() {
