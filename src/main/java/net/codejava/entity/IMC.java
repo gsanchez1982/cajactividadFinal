@@ -9,82 +9,6 @@ import java.time.format.DateTimeFormatter;
 
 @Entity
 public class IMC {
-<<<<<<< HEAD
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private float peso;
-    private float altura;
-    private float iMC;
-    private String fecha;
-
-    public IMC() {
-    }
-
-    protected IMC(Long id, String name, float peso, float altura, float iMC, String fecha) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.peso = peso;
-        this.altura = altura;
-        this.iMC = iMC;
-        this.fecha = fecha;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-
-        this.name = name;
-    }
-
-    public float getPeso() {
-        return peso;
-    }
-
-    public void setPeso(float peso) {
-        this.peso = peso;
-    }
-
-    public float getAltura() {
-        return altura;
-    }
-
-    public void setAltura(float altura) {
-        this.altura = altura;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public float getiMC() {
-        return iMC;
-    }
-
-    public void setiMC(float iMC) {
-        this.iMC = iMC;
-    }
-
-    public void setFecha(String fecha) {
-        LocalDate miFecha = LocalDate.now();
-        DateTimeFormatter miFechaF = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String FechaFormat = miFecha.format(miFechaF);
-        this.fecha = FechaFormat;
-    }
-=======
 	private Long id;
 	private String name;
 	private float peso;
@@ -144,8 +68,8 @@ public class IMC {
 		return iMC;
 	}
 
-	public void setIMC(float altura, float peso) {
-                this.iMC = peso / (altura * altura);
+	public void setIMC(float iMC) {
+                this.iMC = iMC;
 	}
         
         public String getFecha() {
@@ -158,6 +82,5 @@ public class IMC {
                 String FechaFormat = miFecha.format(miFechaF);
 		this.fecha = FechaFormat;
 	}
->>>>>>> parent of 478cf05 (Update IMC.java)
 
 }

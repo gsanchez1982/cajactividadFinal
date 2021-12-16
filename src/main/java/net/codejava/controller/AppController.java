@@ -48,17 +48,13 @@ public class AppController {
     public String showNewIMCPage(Model model) {
         IMC IMC = new IMC();
         model.addAttribute("IMC", IMC);
+
         return "new_IMC";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-<<<<<<< HEAD
-    public String saveIMC(@ModelAttribute("IMC") IMC imc) {
-        service.save(imc);
-=======
     public String saveIMC(@ModelAttribute("IMC") IMC IMC) {
         service.save(IMC);
->>>>>>> parent of 2120cb3 (Update AppController.java)
 
         return "redirect:/";
     }
